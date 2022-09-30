@@ -1,3 +1,3 @@
-# Lab Report 1 - Week 0
+# Lab Report 0 - Week 0
 
 ![Anya](screenshots/Anya.png)
