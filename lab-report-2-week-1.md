@@ -1,3 +1,5 @@
+# Lab Report 2 - Week 1
+
 ## Install Visual Studio Code
 
 1. Go to Visual Studio Website at https://code.visualstudio.com
