@@ -114,6 +114,7 @@ If you see `Identity added: [ssh key path] ([ssh identity])` then it means the k
 
 Now if we log in with `ssh` command, you will notice the prompt that asks for password is gone, just like this:
 ![ssh After ssh Key](./screenshots/lab-2/ssh-after-ssh-key.png)
+
 Cheers! You no longer have to type out that long password every single time you try to `ssh` to the remote server!
 
 ## Optimize Remote Running
