@@ -85,7 +85,7 @@ If you see this, congratulations! You just learned how to run a source file on a
 ## Setting an SSH key
 You may think if it is redundant to type out your long password every single time you log on to the remote computer or copy your files. You may also feel insecure about typing your password in front of your classmates and they might accidentally witness your little secret. Well you are not the only one.
 
-***INTRODUCE SHH KEY***
+***INTRODUCE SSH KEY***
 
 With SSH key, the remote computer will recognize the key you marked for it to "whitelist" and use it as a password except you don't have to type it because the terminal knows where your key is located at.
 
