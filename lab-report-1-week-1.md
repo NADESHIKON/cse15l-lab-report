@@ -3,12 +3,12 @@
 ## Install Visual Studio Code
 
 1. Go to Visual Studio Website at https://code.visualstudio.com
-![Visual Studio Website](./screenshots/lab-2/visual-studio-website.png)
+![Visual Studio Website](screenshots/lab-1/visual-studio-website.png)
 2. Click `Download for Windows`
 3. Click the downloaded file to install Visual Studio Code
-![VSCode Download Success](./screenshots/lab-2/visual-studio-download-success.png)
+![VSCode Download Success](screenshots/lab-1/visual-studio-download-success.png)
 4. After installation, open VS Code and you should see something like this:
-![VSCode Welcome](./screenshots/lab-2/visual-studio-welcome.png)
+![VSCode Welcome](screenshots/lab-1/visual-studio-welcome.png)
 
 ## Grab UCSD CSE15L Course-Specific Account
 1. Head to [here](https://sdacs.ucsd.edu/~icc/index.php) to lookup your course-specific account with your triton link ID and your student ID number.
@@ -29,7 +29,7 @@ ssh X@ieng6.ucsd.edu
 2. You should see a "Password:" feedback like this and at that point, type the password you set for the course specific account `X`. 
     - Note: You will not receive any feedback for the password field input for anything you have typed, so be careful for the typos!
 3. Once you typed the correct password, you should be able to log on to the remote computer, it should show something like this:
-![Connect SSH with Password](./screenshots/lab-2/connect-ssh-with-password.png)
+![Connect SSH with Password](screenshots/lab-1/connect-ssh-with-password.png)
     - Note: You might get confused at this message: ```RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
       Are you sure you want to continue connecting (yes/no/[fingerprint])?```
       In this case, say `yes` because it generally happens when you connect to the server for the first time, or you connect server from a different computer for the first time. (For the case in UCSD, you should be alarmed when you're trying to connect to your personal machine through SSH)
@@ -38,7 +38,7 @@ ssh X@ieng6.ucsd.edu
 ## Run Some Commands
 
 Now you have connected to the lab computer remotely, you can try running for some commands! For example:
-![Run ls Command](./screenshots/lab-2/run-ls-command.png)
+![Run ls Command](screenshots/lab-1/run-ls-command.png)
 
 ## Moving Files with `scp`
 Now you might think "hey, I log on to the lab computer but it is going to be pain to execute source code with `cat` command that we learned in the class". Well, introduce `scp` command!
@@ -59,13 +59,13 @@ class WhereAmI {
 }
 ```
 Then I want to upload this file to the remote server, then I can run this:
-![Run scp Command](./screenshots/lab-2/run-scp-command.png)
+![Run scp Command](screenshots/lab-1/run-scp-command.png)
 
 If you see this, then it means you have successfully copied your local file to the remote computer! Yay!
 
 You can check the file by `ssh` into the remote computer and run `ls` command at the root directory (if you uploaded it to root directory, and if not you move your terminal folder to the one you uploaded to with `cd` then you run `ls`)
 
-![ls After scp](./screenshots/lab-2/after-scp-ls.png)
+![ls After scp](screenshots/lab-1/after-scp-ls.png)
 
 ### Bonus: Running Java Files
 Remember you just uploaded a `.java` file to the remote computer (well at least in this tutorial I did so I'll assume you did)? We can run that file with `java` and `javac` command!
@@ -78,7 +78,7 @@ javac WhereAmI.java
 java WhereAmI
 ```
 Then you should see the following terminal output (or similar)
-![Java Command Output](./screenshots/lab-2/java-command-output.png)
+![Java Command Output](screenshots/lab-1/java-command-output.png)
 
 If you see this, congratulations! You just learned how to run a source file on a remote server, which is an essential skill.
 
@@ -90,7 +90,7 @@ You may think if it is redundant to type out your long password every single tim
 With SSH key, the remote computer will recognize the key you marked for it to "whitelist" and use it as a password except you don't have to type it because the terminal knows where your key is located at.
 
 Start off by typing `ssh-keygen` in your terminal and follow the direction like in this image:
-![ssh Keygen Command](./screenshots/lab-2/ssh-keygen-command.png)
+![ssh Keygen Command](screenshots/lab-1/ssh-keygen-command.png)
 You will find your `ssh` keypair outputted at the designated location (In my case, I have set it to ``[User folder]\.ssh\cse15l-key``)
 
 Then, you can utilize `scp` command we learned earlier to upload your key to the correct location:
@@ -113,7 +113,7 @@ ssh-add $env:USERPROFILE\.ssh\cse15l-key
 If you see `Identity added: [ssh key path] ([ssh identity])` then it means the key has been successfully added and you can use it to login to your remote computer now!
 
 Now if we log in with `ssh` command, you will notice the prompt that asks for password is gone, just like this:
-![ssh After ssh Key](./screenshots/lab-2/ssh-after-ssh-key.png)
+![ssh After ssh Key](screenshots/lab-1/ssh-after-ssh-key.png)
 
 Cheers! You no longer have to type out that long password every single time you try to `ssh` to the remote server!
 
@@ -130,7 +130,7 @@ Host [alias name]
 Alias name can be anything you want, in my case I defined it as `cse15l` because it is short and easy to remember yet unique. Remember to replace `X` with the actual username you received.
 
 Now, you can easily `ssh` into the remote computer with your defined alias, for example:
-![ssh With Alias](./screenshots/lab-2/ssh-with-alias.png)
+![ssh With Alias](screenshots/lab-1/ssh-with-alias.png)
 
 Wow, instead of that long and hard-to-remember username, we only need a single `cse15l` and easy connect! 
 
