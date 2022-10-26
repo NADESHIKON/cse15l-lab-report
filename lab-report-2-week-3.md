@@ -99,7 +99,27 @@ public class FileExample {
 }
 ```
 - Failure-inducing input: An input that asks to get all files from an existing directory with **more than one level** of subdirectories and/or files.
+
+```java
+public class FileTests {
+    @Test
+    public void testFileGetFiles() throws IOException {
+        File file = new File("./folder1");
+
+        List<File> files = Arrays.asList(
+                new File("./folder1"),
+                new File("./folder1/folder2"),
+                new File("./folder1/folder2/folder3")
+        );
+
+        assertEquals(files, FileExample.getFiles(file));
+    }
+}
+```
 - Symptom: The method will only return the files from the **first level** of subdirectories and/or files instead of all files.
+![Part 2 Failure Inducing](./screenshots/lab-3/part-2-failure-inducing-screenshot.png)
+*The folder `folder1` has a child folder `folder2` and that child folder has a child folder named `folder3`. Expected behavior would be returning all folder paths: folder1, folder2, folder3 but, as shown in the screenshot, only returns folder1 and folder2 paths*
+
 - The bug: ``for (File subFile : paths) {
   result.add(subFile);
   }``
@@ -199,7 +219,23 @@ class LinkedList {
 }
 ```
 - Failure-inducing input: Initialize a LinkedList, then append these integers in order: 1, 2, 3. Then call ``last()`` method in the LinkedList.
+```java
+public class LinkedListTests {
+    @Test
+    public void testLinkedListAppend() {
+        LinkedList list = new LinkedList();
+
+        list.append(1);
+        list.append(2);
+        list.append(3);
+
+        assertEquals(3, list.last());
+    }
+}
+```
 - Symptom: The terminal times out and eventually goes Java Heap Space error.
+![Part 2 Failure Inducing](./screenshots/lab-3/part-2-failure-inducing-screenshot-2.png)
+*POV: Running for a thousand years and the test still did not finish processing. This is a huge red flag that indicates the method is running in an infinite loop and will eventually consume all of your computer heap spaces*
 - Bug: ``while(n.next != null) {``
 - The connection between symptom and bug is that this while loop will always have a condition of true because the ``n.next`` is always being set to something that is not null in the while body and thus the ``n.next`` will be always non-null, ultimately leading the while condition to be true forever.
 
