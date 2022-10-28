@@ -8,3 +8,6 @@
 
 ### Week 3
 [Lab Report 2](lab-report-2-week-3.md)
+
+### Week 5
+[Lab Report 2](lab-re)
